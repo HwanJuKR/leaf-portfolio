@@ -274,3 +274,35 @@ hr {
   overflow: hidden !important;
   clip: rect(0 0 0 0) !important;
 }
+
+/* common */
+h2 {
+  position: relative;
+  margin-bottom: 40px;
+  font-size: 34px;
+  font-weight: 600;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    bottom: -15px;
+    margin-left: -5px;
+    background: #31a261;
+    border-radius: 100%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 100px;
+    margin-left: -50px;
+    height: 1px;
+    background: #31a261;
+  }
+}
