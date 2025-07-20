@@ -51,7 +51,7 @@ export default function Contact(): JSX.Element {
         publicKey
       );
 
-      if (result.text === "OK") {
+      if (result.status === 200) {
         alert("메일이 전송되었습니다!");
         form.current.reset();
       }
