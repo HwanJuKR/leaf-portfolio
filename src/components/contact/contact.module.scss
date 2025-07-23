@@ -46,8 +46,8 @@
       display: inline-flex;
       width: 18px;
       height: 18px;
-      background: url("/sp-ico.png") no-repeat;
-      background-position-x: var(--ico-offset-x);
+      background: url("/sp-icon.png") no-repeat;
+      background-position-x: var(--icon-offset-x);
       background-position-y: -170px;
     }
   
@@ -55,8 +55,8 @@
       display: inline-flex;
       width: 20px;
       height: 16px;
-      background: url("/sp-ico.png") no-repeat;
-      background-position-x: var(--ico-offset-x);
+      background: url("/sp-icon.png") no-repeat;
+      background-position-x: var(--icon-offset-x);
       background-position-y: -153px;
     }
   }
