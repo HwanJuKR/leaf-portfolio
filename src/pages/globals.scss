@@ -73,10 +73,10 @@
   --color-bg-secondary: #f0f1f5;
   --color-border: #fff;
   --color-accent: #31a261;
-  --ico-offset-x: -41px;
-  --ico-play-y: 0;
-  --ico-menu-x: 0;
-  --ico-close-x: 0;
+  --icon-offset-x: -41px;
+  --icon-play-y: 0;
+  --icon-menu-x: 0;
+  --icon-close-x: 0;
 }
 
 [data-theme="dark"] {
@@ -84,10 +84,10 @@
   --color-bg: #333;
   --color-bg-secondary: #1f1f1f;
   --color-border: #1f1f1f;
-  --ico-offset-x: 0;
-  --ico-play-y: -16px;
-  --ico-menu-x: -39px;
-  --ico-close-x: -18px;
+  --icon-offset-x: 0;
+  --icon-play-y: -16px;
+  --icon-menu-x: -39px;
+  --icon-close-x: -18px;
 }
 
 /* reset */

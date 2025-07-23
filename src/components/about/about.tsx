@@ -3,17 +3,19 @@ import styles from "./about.module.scss";
 
 export default function About(): JSX.Element {
   const skills = [
-    { src: "/ico-html5.png", alt: "HTML5", label: "HTML5" },
-    { src: "/ico-css3.png", alt: "CSS3", label: "CSS3" },
-    { src: "/ico-js.png", alt: "JavaScript", label: "JavaScript" },
-    { src: "/ico-jquery.png", alt: "jQuery", label: "jQuery" },
-    { src: "/ico-sass.png", alt: "Sass", label: "Sass" },
-    { src: "/ico-a11y.png", alt: "웹표준/웹접근성", label: "웹표준/웹접근성" },
-    { src: "/ico-vue.png", alt: "Vue.js", label: "Vue.js" },
-    { src: "/ico-react.png", alt: "React", label: "React" },
-    { src: "/ico-next.png", alt: "Next.js", label: "Next.js" },
-    { src: "/ico-git.png", alt: "Git", label: "Git" },
-    { src: "/ico-ps.png", alt: "Photoshop", label: "Photoshop" },
+    { src: "/icon/icon-html5.png", alt: "HTML5", label: "HTML5" },
+    { src: "/icon/icon-css3.png", alt: "CSS3", label: "CSS3" },
+    { src: "/icon/icon-js.png", alt: "JavaScript", label: "JavaScript" },
+    { src: "/icon/icon-jquery.png", alt: "jQuery", label: "jQuery" },
+    { src: "/icon/icon-ejs.png", alt: "EJS", label: "EJS" },
+    { src: "/icon/icon-sass.png", alt: "Sass", label: "Sass" },
+    { src: "/icon/icon-a11y.png", alt: "웹접근성", label: "웹접근성" },
+    { src: "/icon/icon-vue.png", alt: "Vue.js", label: "Vue.js" },
+    { src: "/icon/icon-react.png", alt: "React", label: "React" },
+    { src: "/icon/icon-next.png", alt: "Next.js", label: "Next.js" },
+    { src: "/icon/icon-git.png", alt: "Git", label: "Git" },
+    { src: "/icon/icon-aws.png", alt: "AWS", label: "AWS" },
+    { src: "/icon/icon-ps.png", alt: "Photoshop", label: "Photoshop" },
   ];
 
   return (
