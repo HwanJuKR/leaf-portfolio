@@ -1,12 +1,16 @@
 import Category from "@/components/category/category";
-import styles from "./layout.module.scss";
 import { ReactNode } from "react";
+import styles from "./layout.module.scss";
+import SkipNav from "../skip/skipNav";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div className={styles.container}>
+      <SkipNav />
       <Category />
-      <div className={styles.content}>{children}</div>
+      <div id="content" className={styles.content}>
+        {children}
+      </div>
     </div>
   );
 }

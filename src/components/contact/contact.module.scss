@@ -1,64 +1,225 @@
 .contact {
-  input,
-  textarea {
-    width: 100%;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    color: var(--color-text);
-    border: none;
-    border-bottom: 1px solid #444;
-    background: transparent;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "form contact"
+    "form social";
+  gap: 20px;
 
-    &::placeholder {
-      color: #777;
-    }
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "form"
+      "contact"
+      "social";
   }
 
-  .send {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
-    color: var(--color-text);
-    font-size: 18px;
-    border: none;
-    border-bottom: 5px solid #31a261;
-    background: transparent;
+  .section:nth-child(1) {
+    grid-area: form;
+  }
 
-    &:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
+  .section:nth-child(2) {
+    grid-area: contact;
+  }
+
+  .section:nth-child(3) {
+    grid-area: social;
+  }
+
+  .section {
+    position: relative;
+    padding: 40px;
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    background: var(--color-bg-sub);
+    box-shadow: var(--shadow-primary);
+    overflow: hidden;
+
+    .title {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: var(--color-text);
+      font-weight: 700;
+    }
+
+    .description {
+      margin-bottom: 20px;
+      color: var(--color-text-sub);
+      font-size: 16px;
+    }
+
+    .form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .formGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        label {
+          color: var(--color-text);
+          margin-bottom: 4px;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 16px;
+          color: var(--color-text);
+          border: none;
+          background: var(--color-bg);
+          border: 2px solid var(--color-border);
+          border-radius: 10px;
+          resize: none;
+          box-sizing: border-box;
+          transition: all 0.2s ease;
+
+          &:hover,
+          &:focus-within {
+            border-color: var(--color-accent);
+          }
+
+          &::placeholder {
+            color: var(--color-text-sub);
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        textarea {
+          height: 120px;
+        }
+      }
+
+      .btnSubmit {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 16px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--color-bg);
+        border-radius: 12px;
+        background: var(--gradient-primary);
+        box-shadow: var(--shadow-primary);
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:disabled {
+          cursor: not-allowed;
+          opacity: 0.7;
+        }
+
+        .loadingSpinner {
+          width: 20px;
+          height: 20px;
+          border: 2px solid rgba(255, 255, 255, 0.25);
+          border-top: 2px solid var(--color-bg);
+          border-radius: 100%;
+          animation: spin 1s linear infinite;
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        background: var(--color-bg);
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.2s ease;
+
+        &:hover {
+          transform: translateY(-4px);
+        }
+
+        .icon {
+          position: relative;
+          width: 20px;
+          height: 18px;
+          background: url("/sp-icon.png") no-repeat;
+          flex-shrink: 0;
+
+          &.call {
+            background-position: -41px -170px;
+          }
+
+          &.email {
+            background-position: -41px -152px;
+          }
+
+          &.on {
+            background-position-x: 0;
+          }
+        }
+
+        .detail {
+          position: relative;
+          flex: 1;
+
+          .label {
+            color: var(--color-text-sub);
+            margin-bottom: 4px;
+          }
+
+          .value {
+            color: var(--color-text);
+          }
+        }
+      }
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        background: var(--color-bg);
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+        }
+
+        img {
+          flex-shrink: 0;
+        }
+      }
     }
   }
 }
 
-.info {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 40px;
-
-  li {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-    .call {
-      display: inline-flex;
-      width: 18px;
-      height: 18px;
-      background: url("/sp-icon.png") no-repeat;
-      background-position-x: var(--icon-offset-x);
-      background-position-y: -170px;
-    }
-  
-    .email {
-      display: inline-flex;
-      width: 20px;
-      height: 16px;
-      background: url("/sp-icon.png") no-repeat;
-      background-position-x: var(--icon-offset-x);
-      background-position-y: -153px;
-    }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-
+  100% {
+    transform: rotate(360deg);
+  }
 }

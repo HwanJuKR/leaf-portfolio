@@ -35,7 +35,7 @@ export default function Portfolio(): JSX.Element {
       link: "https://nol.yanolja.com/",
       stack: "Next.js / TypeScript / Tailwind",
       summary: {
-        text1: "야놀자 플랫폼 ‘NOL’ 리브랜딩 작업 전반 참여",
+        text1: "야놀자 플랫폼 'NOL' 리브랜딩 작업 전반 참여",
         text2: "전반적인 디자인 시스템 개편",
       },
     },
@@ -51,10 +51,44 @@ export default function Portfolio(): JSX.Element {
       },
     },
     {
+      title: "티켓 예매 위버스 인증 연동",
+      period: "2024/05 ~ 2024/06",
+      link: "",
+      stack: "Next.js / TypeScript / Spring",
+      summary: {
+        text1: "Weverse 연동을 통해 팬 인증 기반 티켓 예매 기능 구축",
+        text2: "인증 토큰 처리 및 예매 조건 분기처리 로직 구현",
+      },
+    },
+    {
+      src: "/portfolio/img-bridge.png",
+      title: "티켓 브릿지 페이지 개편",
+      period: "2024/03 ~ 2024/04",
+      link: "https://tickets.interpark.com/contents/bridge/25003151",
+      stack: "Next.js / TypeScript / SCSS / SWR / Spring",
+      summary: {
+        text1: "공연 상세페이지 이동 전 중간 브릿지 페이지 UI 개선",
+        text2: "UX 향상을 위해 로딩 속도 최적화 및 반응형 디자인 적용",
+      },
+    },
+    {
+      src: "/portfolio/img-genre.png",
+      title: "티켓 대장르 개편",
+      period: "2023/12 ~ 2024/02",
+      link: "https://tickets.interpark.com/contents/genre/musical",
+      stack: "Next.js / TypeScript / SCSS / SWR / Spring / Cypress",
+      summary: {
+        text1: "장르별 공연 리스트 등 UI 전면 개편",
+        text2: "캐러셀, 탭 기능 등 UX 개선 작업 수행",
+      },
+    },
+  ];
+  const UI: PortfolioItem[] = [
+    {
       title: "티켓 키오스크 UI 개편",
       period: "2024/10 ~ 2024/11",
       link: "",
-      stack: "EJS / SCSS",
+      stack: "EJS / SCSS / JavaScript",
       summary: {
         text1: "현장 키오스크 환경에 맞는 터치 UI 개편 및 시인성 향상 작업",
         text2: "퍼포먼스를 고려한 모듈화 및 디바이스 대응 UI 개선",
@@ -65,24 +99,11 @@ export default function Portfolio(): JSX.Element {
       title: "MDShop 개편",
       period: "2024/07 ~ 2024/08",
       link: "https://nolmdshop.com/",
-      stack: "Cafe24 / JavaScript",
+      stack: "Cafe24 / CSS /JavaScript",
       summary: {
         text1: "카페24 기본 템플릿을 커스터마이징하여 UI 개선",
-        text2: "API 연동을 통한 상품 조회 구현",
       },
     },
-    {
-      title: "티켓 예매 위버스 인증 연동",
-      period: "2024/05 ~ 2024/06",
-      link: "",
-      stack: "Next.js / TypeScript / Spring",
-      summary: {
-        text1: "Weverse 연동을 통해 팬 인증 기반 티켓 예매 기능 구축",
-        text2: "인증 토큰 처리 및 예매 조건 분기처리 로직 구현",
-      },
-    },
-  ];
-  const UI: PortfolioItem[] = [
     {
       src: "/portfolio/img-air.png",
       title: "인터파크 항공 모바일 개편",
@@ -101,17 +122,6 @@ export default function Portfolio(): JSX.Element {
       stack: "EJS / SCSS / JavaScript",
       summary: {
         text1: "메인 비주얼 개편 및 컨텐츠 구조 개선",
-      },
-    },
-    {
-      title: "인터파크 이벤트 프로모션",
-      period: "2021.06 ~ 2023.03",
-      link: "",
-      stack: "EJS / SCSS / JavaScript",
-      summary: {
-        text1:
-          "인생주간, 축제 가는 달, 숙박 세일 페스타 등 계기성 이벤트 프로모션 페이지 구축",
-        text2: "이벤트 프로모션 페이지 구축 및 유지보수",
       },
     },
     {
@@ -170,54 +180,108 @@ export default function Portfolio(): JSX.Element {
 
   return (
     <>
-      <h2>FE</h2>
+      <h2>Portfolio</h2>
+      <div className={styles.badge}>Frontend</div>
       <ul className={styles.grid}>
         {FE.map((item, index) => (
           <li key={index} className={styles.card}>
             <Link
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
               className={styles.link}
+              href={item.link || "#"}
+              target={item.link ? "_blank" : "_self"}
+              title={item.link ? "새 창으로 열림" : ""}
+              rel="noopener noreferrer"
             >
               <div className={styles.imageWrap}>
                 {item.src ? (
-                  <Image className={styles.image} src={item.src} alt="" fill />
+                  <>
+                    <Image
+                      className={styles.image}
+                      src={item.src}
+                      alt=""
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    {item.link && (
+                      <div className={styles.overlay}>
+                        <span className={styles.viewProject}>자세히 보기</span>
+                      </div>
+                    )}
+                  </>
                 ) : (
                   <div className={styles.noImage}></div>
                 )}
               </div>
-              <div className={styles.title}>{item.title}</div>
-              <p className={styles.period}>{item.period}</p>
-              <p className={styles.stack}>{item.stack}</p>
-              <p>{item.summary.text1}</p>
-              {item.summary.text2 && <p>{item.summary.text2}</p>}
+              <div className={styles.content}>
+                <div className={styles.title}>{item.title}</div>
+                <div className={styles.info}>
+                  <div className={styles.period}>{item.period}</div>
+                  <div className={styles.stack}>{item.stack}</div>
+                </div>
+                <div className={styles.summary}>
+                  <p>{item.summary.text1}</p>
+                  {item.summary.text2 && <p>{item.summary.text2}</p>}
+                </div>
+                {item.link && (
+                  <div className={styles.more}>
+                    <span className={styles.text}>자세히 보기</span>
+                  </div>
+                )}
+              </div>
             </Link>
           </li>
         ))}
       </ul>
-      <h2>UI</h2>
+
+      <div className={styles.badge}>Publishing</div>
       <ul className={styles.grid}>
         {UI.map((item, index) => (
           <li key={index} className={styles.card}>
             <Link
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
               className={styles.link}
+              href={item.link || "#"}
+              target={item.link ? "_blank" : "_self"}
+              title={item.link ? "새 창으로 열림" : ""}
+              rel="noopener noreferrer"
             >
               <div className={styles.imageWrap}>
                 {item.src ? (
-                  <Image className={styles.image} src={item.src} alt="" fill />
+                  <>
+                    <Image
+                      className={styles.image}
+                      src={item.src}
+                      alt=""
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    {item.link && (
+                      <div className={styles.overlay}>
+                        <span className={styles.viewProject}>자세히 보기</span>
+                      </div>
+                    )}
+                  </>
                 ) : (
                   <div className={styles.noImage}></div>
                 )}
               </div>
-              <div className={styles.title}>{item.title}</div>
-              <p className={styles.period}>{item.period}</p>
-              <p className={styles.stack}>{item.stack}</p>
-              <p>{item.summary.text1}</p>
-              {item.summary.text2 && <p>{item.summary.text2}</p>}
+              <div className={styles.content}>
+                <div className={styles.title}>{item.title}</div>
+                <div className={styles.info}>
+                  <div className={styles.period}>{item.period}</div>
+                  <div className={styles.stack}>{item.stack}</div>
+                </div>
+                <div className={styles.summary}>
+                  <p>{item.summary.text1}</p>
+                  {item.summary.text2 && <p>{item.summary.text2}</p>}
+                </div>
+                {item.link && (
+                  <div className={styles.more}>
+                    <span className={styles.text}>자세히 보기</span>
+                  </div>
+                )}
+              </div>
             </Link>
           </li>
         ))}

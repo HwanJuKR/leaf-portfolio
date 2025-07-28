@@ -1,0 +1,22 @@
+.skipNav {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 100000;
+
+  .link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    background: #000;
+
+    &:focus-within {
+      top: 0;
+    }
+  }
+}

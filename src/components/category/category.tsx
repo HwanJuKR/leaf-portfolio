@@ -63,6 +63,7 @@ export default function Category() {
                 alt="leaf 프로필 이미지"
                 width={36}
                 height={36}
+                priority
               />
             </li>
             {menuList.map(({ id, href, label, className }) => (
@@ -98,18 +99,21 @@ export default function Category() {
           <button
             ref={btnMobileMenuRef}
             type="button"
-            className={styles.mobileMenu}
+            className={`${styles.mobileMenu} ${isDarkMode ? styles.on : ""}`}
             aria-label="메뉴 열기"
             aria-haspopup="true"
             aria-expanded={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(true)}
           />
-          {isMobileMenuOpen && 
+          {isMobileMenuOpen &&
             createPortal(
-              <nav className={styles.mobileList} aria-hidden={!isMobileMenuOpen}>
+              <nav
+                className={styles.mobileList}
+                aria-hidden={!isMobileMenuOpen}
+              >
                 <button
                   type="button"
-                  className={styles.close}
+                  className={`${styles.close} ${isDarkMode ? styles.on : ""}`}
                   aria-label="메뉴 닫기"
                   onClick={() => setIsMobileMenuOpen(false)}
                 />
@@ -151,8 +155,7 @@ export default function Category() {
                 />
               </nav>,
               document.body
-            )
-          }
+            )}
         </>
       )}
     </>
