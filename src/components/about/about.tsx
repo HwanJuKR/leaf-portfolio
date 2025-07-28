@@ -1,8 +1,20 @@
 import Image from "next/image";
 import styles from "./about.module.scss";
 
+interface Skill {
+  src: string;
+  alt: string;
+  label: string;
+}
+
+interface Experience {
+  period: string;
+  role: string;
+  description: string;
+}
+
 export default function About(): JSX.Element {
-  const skills = [
+  const skills: Skill[] = [
     { src: "/icon/icon-html5.png", alt: "HTML5", label: "HTML5" },
     { src: "/icon/icon-css3.png", alt: "CSS3", label: "CSS3" },
     { src: "/icon/icon-js.png", alt: "JavaScript", label: "JavaScript" },
@@ -18,17 +30,41 @@ export default function About(): JSX.Element {
     { src: "/icon/icon-ps.png", alt: "Photoshop", label: "Photoshop" },
   ];
 
+  const experiences: Experience[] = [
+    {
+      period: "2021.06 - 현재",
+      role: "놀유니버스 | 프론트엔드 개발자",
+      description:
+        "NOL 플랫폼의 프론트엔드 개발을 담당하며, React/Next.js 기반의 웹 서비스를 구축하고 있습니다. 사용자 경험 개선과 성능 최적화에 중점을 두고 개발하고 있습니다.",
+    },
+    {
+      period: "2019.05 - 2021.05",
+      role: "KBS미디어 | 웹퍼블리셔",
+      description:
+        "KBS 웹서비스들의 퍼블리싱 업무를 담당했습니다. 메인 페이지 개편, 신규 서비스 구축, 웹 접근성 인증 마크 획득 등의 프로젝트에 참여했습니다.",
+    },
+    {
+      period: "2016.02 - 2018.12",
+      role: "카이모바일 | 웹퍼블리셔",
+      description:
+        "스타트업으로 다양한 SI 프로젝트에 참여하며 반응형 웹 구축, 크로스 브라우징 대응 등 웹퍼블리싱 전반을 담당했습니다. 빠르게 변화하는 요구사항에 유연하게 대응하며, 여러 기업의 웹 서비스 구축 경험을 쌓았습니다.",
+    },
+  ];
+
   return (
     <>
       <h2>About Me</h2>
       <div className={styles.aboutMe}>
-        <Image
-          src="/me.png"
-          alt="의자에 앉아서 웃고있는 서환주 사진"
-          width={200}
-          height={200}
-        />
-        <p>
+        <div className={styles.profileImage}>
+          <Image
+            src="/me.png"
+            alt="의자에 앉아서 웃고있는 서환주 사진"
+            width={200}
+            height={200}
+            priority
+          />
+        </div>
+        <div className={styles.description}>
           안녕하세요.
           <br />
           웹 퍼블리셔로 7년간 일한 뒤 프론트엔드 개발로 커리어를 확장해 2년째
@@ -44,18 +80,30 @@ export default function About(): JSX.Element {
           좋아하는 일을 꾸준히 하다 보니 자연스럽게 실력이 쌓여왔고,
           <br />
           주어진 역할에서 항상 최선을 다하는 성실한 개발자입니다.
-        </p>
+        </div>
       </div>
+
       <h2>Skills</h2>
       <div className={styles.skills}>
-        <ul>
-          {skills.map((item) => (
-            <li key={item.label}>
-              <Image src={item.src} alt={item.alt} width={58} height={58} />
-              <span>{item.label}</span>
-            </li>
-          ))}
-        </ul>
+        {skills.map((skills, index) => (
+          <div key={index} className={styles.skillsItem}>
+            <div className={styles.skillsIcon}>
+              <Image src={skills.src} alt="" width={58} height={58} priority />
+            </div>
+            <span className={styles.skillsLabel}>{skills.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <h2>Experience</h2>
+      <div className={styles.experience}>
+        {experiences.map((exp, index) => (
+          <div key={index} className={styles.experienceItem}>
+            <div className={styles.period}>{exp.period}</div>
+            <div className={styles.role}>{exp.role}</div>
+            <div className={styles.description}>{exp.description}</div>
+          </div>
+        ))}
       </div>
     </>
   );

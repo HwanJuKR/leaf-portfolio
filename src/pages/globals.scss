@@ -1,93 +1,39 @@
-/* font */
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 100;
-  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2)
-      format("woff2"),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff)
-      format("woff"),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf)
-      format("opentype");
-}
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 300;
-  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2)
-      format("woff2"),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff)
-      format("woff"),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf)
-      format("opentype");
-}
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2)
-      format("woff2"),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff)
-      format("woff"),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf)
-      format("opentype");
-}
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2)
-      format("woff2"),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff)
-      format("woff"),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf)
-      format("opentype");
-}
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 700;
-  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2)
-      format("woff2"),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff)
-      format("woff"),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf)
-      format("opentype");
-}
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2)
-      format("woff2"),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff)
-      format("woff"),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf)
-      format("opentype");
-}
-
 /* theme */
 :root {
-  --color-text: #000;
+  --color-text: #1a1a1a;
+  --color-text-sub: #6b7280;
   --color-bg: #fff;
-  --color-bg-secondary: #f0f1f5;
-  --color-border: #fff;
-  --color-accent: #31a261;
-  --icon-offset-x: -41px;
-  --icon-play-y: 0;
-  --icon-menu-x: 0;
-  --icon-close-x: 0;
+  --color-bg-sub: #f9fafb;
+  --color-border: #e5e7eb;
+  --color-accent: #374151;
+
+  --gradient-primary: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+  --gradient-background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+
+  --shadow-primary: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 [data-theme="dark"] {
-  --color-text: #fff;
-  --color-bg: #333;
-  --color-bg-secondary: #1f1f1f;
-  --color-border: #1f1f1f;
-  --icon-offset-x: 0;
-  --icon-play-y: -16px;
-  --icon-menu-x: -39px;
-  --icon-close-x: -18px;
+  --color-text: #f9fafb;
+  --color-text-sub: #9ca3af;
+  --color-bg: #111827;
+  --color-bg-sub: #1f2937;
+  --color-border: #4b5563;
+  --color-accent: #d1d5db;
+
+  --gradient-primary: linear-gradient(135deg, #d1d5db 0%, #f3f4f6 100%);
+  --gradient-background: linear-gradient(135deg, #000001 0%, #111827 100%);
+
+  --shadow-primary: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+*,
+*:before,
+*:after {
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* reset */
@@ -151,18 +97,14 @@ legend,
 input,
 textarea,
 button {
-  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "애플 SD 산돌고딕 Neo",
-    "Helvetica Neue", "Roboto", "sans-serif";
-}
-html,
-#__next {
-  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Apple SD Gothic Neo", "애플 SD 산돌고딕 Neo", "Helvetica Neue", "Roboto",
+    sans-serif;
 }
 body {
   height: 100%;
   font-size: 14px;
   word-break: keep-all;
-  color: var(--color-text);
   background: var(--color-bg);
   overflow: hidden;
 }
@@ -195,6 +137,7 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
+  transition: all 0.2s ease;
   &:link,
   &:visited,
   &:active,
@@ -217,6 +160,7 @@ button {
   background: none;
   overflow: visible;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 img {
   margin: 0;
@@ -265,6 +209,24 @@ hr {
   border: none;
 }
 
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-sub);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
 /* blind */
 .blind {
   position: absolute !important;
@@ -273,36 +235,4 @@ hr {
   margin: -1px !important;
   overflow: hidden !important;
   clip: rect(0 0 0 0) !important;
-}
-
-/* common */
-h2 {
-  position: relative;
-  margin-bottom: 40px;
-  font-size: 34px;
-  font-weight: 600;
-  text-align: center;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    left: 50%;
-    bottom: -15px;
-    margin-left: -5px;
-    background: #31a261;
-    border-radius: 100%;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-    width: 100px;
-    margin-left: -50px;
-    height: 1px;
-    background: #31a261;
-  }
 }

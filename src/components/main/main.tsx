@@ -40,7 +40,12 @@ export default function Main(): JSX.Element {
       )}
       <div className={styles.title}>
         <h1>Seo Hwan Ju</h1>
-        <p>Front-end development</p>
+        <p>Front-end Developer</p>
+      </div>
+      <div className={styles.floatingElement}>
+        <div className={styles.element}></div>
+        <div className={styles.element}></div>
+        <div className={styles.element}></div>
       </div>
       <footer className={styles.footer}>
         <p>© 2025 Leaf v.3.0.0</p>
