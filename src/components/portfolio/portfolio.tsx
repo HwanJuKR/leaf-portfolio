@@ -18,7 +18,7 @@ export default function Portfolio(): JSX.Element {
   const FE: PortfolioItem[] = [
     {
       src: "/portfolio/img-map.png",
-      title: "NOL 해외지도 개편",
+      title: "NOL - 해외지도 개편",
       period: "2025/05 ~ 2025/06",
       link: "https://nol.yanolja.com/results?keyword=%EC%98%A4%EC%82%AC%EC%B9%B4&category=global&pageKey=1753250282069",
       stack: "Next.js / TypeScript / Tailwind / React Query / NestJS",
@@ -30,7 +30,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       src: "/portfolio/img-rebranding.png",
-      title: "NOL 리브랜딩",
+      title: "NOL - 리브랜딩",
       period: "2025/03 ~ 2025/04",
       link: "https://nol.yanolja.com/",
       stack: "Next.js / TypeScript / Tailwind",
@@ -41,7 +41,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       src: "/portfolio/img-mypage.png",
-      title: "티켓 모바일 마이페이지 홈 개편",
+      title: "인터파크 티켓 - 모바일 마이페이지 홈 개편",
       period: "2024/12 ~ 2025/01",
       link: "https://tickets.interpark.com/contents/myPage",
       stack: "Next.js / TypeScript / SCSS / SWR / Spring",
@@ -51,7 +51,7 @@ export default function Portfolio(): JSX.Element {
       },
     },
     {
-      title: "티켓 예매 위버스 인증 연동",
+      title: "인터파크 티켓 - 예매 위버스 인증 연동",
       period: "2024/05 ~ 2024/06",
       link: "",
       stack: "Next.js / TypeScript / Spring",
@@ -62,7 +62,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       src: "/portfolio/img-bridge.png",
-      title: "티켓 브릿지 페이지 개편",
+      title: "인터파크 티켓 - 브릿지 페이지 개편",
       period: "2024/03 ~ 2024/04",
       link: "https://tickets.interpark.com/contents/bridge/25003151",
       stack: "Next.js / TypeScript / SCSS / SWR / Spring",
@@ -73,7 +73,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       src: "/portfolio/img-genre.png",
-      title: "티켓 대장르 개편",
+      title: "인터파크 티켓 - 대장르 개편",
       period: "2023/12 ~ 2024/02",
       link: "https://tickets.interpark.com/contents/genre/musical",
       stack: "Next.js / TypeScript / SCSS / SWR / Spring / Cypress",
@@ -85,7 +85,7 @@ export default function Portfolio(): JSX.Element {
   ];
   const UI: PortfolioItem[] = [
     {
-      title: "티켓 키오스크 UI 개편",
+      title: "인터파크 티켓 - 키오스크 UI 개편",
       period: "2024/10 ~ 2024/11",
       link: "",
       stack: "EJS / SCSS / JavaScript",
@@ -106,7 +106,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       src: "/portfolio/img-air.png",
-      title: "인터파크 항공 모바일 개편",
+      title: "인터파크 투어 - 항공 모바일 개편",
       period: "2023/06 ~ 2023/07",
       link: "https://travel.interpark.com/air",
       stack: "EJS / SCSS / JavaScript",
@@ -116,12 +116,22 @@ export default function Portfolio(): JSX.Element {
     },
     {
       src: "/portfolio/img-domestic.png",
-      title: "인터파크 국내숙소 메인 개편",
+      title: "인터파크 투어 - 국내숙소 메인 개편",
       period: "2023/04 ~ 2023/05",
       link: "https://travel.interpark.com/checkinnow",
       stack: "EJS / SCSS / JavaScript",
       summary: {
         text1: "메인 비주얼 개편 및 컨텐츠 구조 개선",
+      },
+    },
+    {
+      src: "/portfolio/img-package.png",
+      title: "인터파크 투어 - 패키지 메인 개편",
+      period: "2022/10 ~ 2023/01",
+      link: "https://travel.interpark.com/tour/main/domestic",
+      stack: "EJS / SCSS / JavaScript",
+      summary: {
+        text1: "레거시 서비스 개편 및 UI/UX 현대화",
       },
     },
     {

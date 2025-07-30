@@ -30,6 +30,7 @@ export default function Category() {
   const { isMobile } = useMobile();
   const [currentMenu, setCurrentMenu] = useState("main");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const mobileMenuRef = useRef<HTMLAnchorElement>(null);
   const btnMobileMenuRef = useRef<HTMLButtonElement>(null);
 
@@ -49,7 +50,15 @@ export default function Category() {
 
   const handleMenuClick = (menuId: string) => {
     setCurrentMenu(menuId);
-    setIsMobileMenuOpen(false);
+    handleCloseMenu();
+  };
+
+  const handleCloseMenu = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsMobileMenuOpen(false);
+      setIsClosing(false);
+    }, 200);
   };
 
   return (
@@ -108,14 +117,16 @@ export default function Category() {
           {isMobileMenuOpen &&
             createPortal(
               <nav
-                className={styles.mobileList}
+                className={`${styles.mobileList} ${
+                  isClosing ? styles.closing : ""
+                }`}
                 aria-hidden={!isMobileMenuOpen}
               >
                 <button
                   type="button"
                   className={`${styles.close} ${isDarkMode ? styles.on : ""}`}
                   aria-label="메뉴 닫기"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={handleCloseMenu}
                 />
                 <ul>
                   {menuList.map(({ id, href, label }) => (
@@ -136,7 +147,7 @@ export default function Category() {
                       type="button"
                       onClick={() => {
                         toggleTheme();
-                        setIsMobileMenuOpen(false);
+                        handleCloseMenu();
                       }}
                       aria-pressed={isDarkMode}
                       aria-label={
@@ -151,7 +162,7 @@ export default function Category() {
                   type="button"
                   className={`${styles.close} blind`}
                   aria-label="메뉴 닫기"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={handleCloseMenu}
                 />
               </nav>,
               document.body

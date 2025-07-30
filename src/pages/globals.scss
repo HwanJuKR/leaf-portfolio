@@ -106,7 +106,8 @@ body {
   font-size: 14px;
   word-break: keep-all;
   background: var(--color-bg);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 input,
 textarea,
