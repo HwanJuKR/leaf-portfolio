@@ -25,7 +25,16 @@ export default function Main(): JSX.Element {
     updateDateTime();
     const interval = setInterval(updateDateTime, 1000);
     console.log(
-      "저의 포트폴리오 사이트에 오신 것을 환영합니다!! 안녕하세요 :)"
+      "%c🌿 Leaf Portfolio",
+      "background: linear-gradient(45deg, #10b981, #059669); color: white; padding: 8px 16px; border-radius: 8px; font-size: 18px; font-weight: bold;"
+    );
+    console.log(
+      "%c안녕하세요! 서환주입니다",
+      "color: #374151; font-size: 16px; font-weight: 600;"
+    );
+    console.log(
+      "%c포트폴리오 사이트에 오신 것을 환영합니다! 🚀",
+      "color: #6b7280; font-size: 14px;"
     );
 
     return () => clearInterval(interval);
@@ -48,7 +57,7 @@ export default function Main(): JSX.Element {
         <div className={styles.element}></div>
       </div>
       <footer className={styles.footer}>
-        <p>© 2025 Leaf v.3.0.0</p>
+        <p>© 2025 Leaf v.3.0.1</p>
       </footer>
     </>
   );
