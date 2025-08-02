@@ -102,6 +102,9 @@
       opacity: 0;
 
       .viewProject {
+        display: flex;
+        align-items: center;
+        gap: 4px;
         background: var(--color-bg);
         color: var(--color-accent);
         padding: 8px 20px;
@@ -137,7 +140,7 @@
       &::after {
         content: "NO IMAGE";
         position: absolute;
-        bottom: 20px;
+        bottom: 60px;
         font-weight: 600;
       }
     }
@@ -199,29 +202,6 @@
 
         + p {
           margin-top: 8px;
-        }
-      }
-    }
-
-    .more {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 16px;
-      border-top: 1px solid var(--color-border);
-
-      .text {
-        position: relative;
-        width: 100%;
-        color: var(--color-accent);
-        font-weight: 600;
-
-        &::after {
-          content: "→";
-          position: absolute;
-          top: 50%;
-          right: 10px;
-          transform: translateY(-50%);
         }
       }
     }

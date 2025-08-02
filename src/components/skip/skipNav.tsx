@@ -1,25 +1,33 @@
 import Link from "next/link";
+import { RefObject } from "react";
 import styles from "./skipNav.module.scss";
 
 const skipNavList = [
-  { id: "content", href: "#content", label: "본문 바로가기" },
+  { id: "content", label: "본문 바로가기" },
 ];
 
-export default function SkipNav() {
+interface SkipNavProps {
+  contentRef: RefObject<HTMLDivElement>;
+}
+
+export default function SkipNav({ contentRef }: SkipNavProps) {
+  const handleSkipClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    contentRef.current?.focus();
+    contentRef.current?.scrollIntoView({ behavior: 'instant' });
+  };
+
   return (
     <ul className={styles.skipNav}>
-      {skipNavList.map(({ id, href, label }) => (
+      {skipNavList.map(({ id, label }) => (
         <li key={id} className={styles.item}>
-          <Link
-            href={href}
+          <button
+            type="button"
             className={styles.link}
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById("content")?.focus();
-            }}
+            onClick={handleSkipClick}
           >
             {label}
-          </Link>
+          </button>
         </li>
       ))}
     </ul>

@@ -1,0 +1,21 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+  }
+
+  .link {
+    display: inline-flex;
+    padding: 12px 24px;
+    background: var(--gradient-primary);
+    color: var(--color-bg);
+    border-radius: 8px;
+    font-weight: 600;
+  }
+}

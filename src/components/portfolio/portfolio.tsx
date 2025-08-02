@@ -161,7 +161,7 @@ export default function Portfolio(): JSX.Element {
       link: "https://www.kbs.co.kr/",
       stack: "HTML / SCSS / JavaScript / jQuery",
       summary: {
-        text1: "KBS 메인페이지 개편 웹퍼블리싱 진행",
+        text1: "KBS 메인페이지 개편 웹 퍼블리싱 진행",
         text2: "다크모드 기능 추가 및 접근성 향상 등 UI 개선 작업 수행",
       },
     },
@@ -215,7 +215,23 @@ export default function Portfolio(): JSX.Element {
                     />
                     {item.link && (
                       <div className={styles.overlay}>
-                        <span className={styles.viewProject}>자세히 보기</span>
+                        <span className={styles.viewProject}>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15,3 21,3 21,9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                          </svg>
+                          자세히 보기
+                        </span>
                       </div>
                     )}
                   </>
@@ -233,11 +249,6 @@ export default function Portfolio(): JSX.Element {
                   <p>{item.summary.text1}</p>
                   {item.summary.text2 && <p>{item.summary.text2}</p>}
                 </div>
-                {item.link && (
-                  <div className={styles.more}>
-                    <span className={styles.text}>자세히 보기</span>
-                  </div>
-                )}
               </div>
             </Link>
           </li>
@@ -268,7 +279,23 @@ export default function Portfolio(): JSX.Element {
                     />
                     {item.link && (
                       <div className={styles.overlay}>
-                        <span className={styles.viewProject}>자세히 보기</span>
+                        <span className={styles.viewProject}>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15,3 21,3 21,9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                          </svg>
+                          자세히 보기
+                        </span>
                       </div>
                     )}
                   </>
@@ -286,11 +313,6 @@ export default function Portfolio(): JSX.Element {
                   <p>{item.summary.text1}</p>
                   {item.summary.text2 && <p>{item.summary.text2}</p>}
                 </div>
-                {item.link && (
-                  <div className={styles.more}>
-                    <span className={styles.text}>자세히 보기</span>
-                  </div>
-                )}
               </div>
             </Link>
           </li>

@@ -8,23 +8,27 @@ import { createPortal } from "react-dom";
 import styles from "./category.module.scss";
 
 const menuList = [
-  { id: "main", href: "/", label: "main", className: styles.main },
-  { id: "about", href: "/about", label: "about", className: styles.about },
+  { id: "main", href: "/", label: "Main", className: styles.main },
+  { id: "about", href: "/about", label: "About", className: styles.about },
   {
     id: "portfolio",
     href: "/portfolio",
-    label: "portfolio",
+    label: "Portfolio",
     className: styles.portfolio,
   },
   {
     id: "contact",
     href: "/contact",
-    label: "contact",
+    label: "Contact",
     className: styles.contact,
   },
 ];
 
-export default function Category() {
+interface CategoryProps {
+  onMenuClick: () => void;
+}
+
+export default function Category({ onMenuClick }: CategoryProps) {
   const router = useRouter();
   const { isDarkMode, toggleTheme } = useTheme();
   const { isMobile } = useMobile();
@@ -51,6 +55,7 @@ export default function Category() {
   const handleMenuClick = (menuId: string) => {
     setCurrentMenu(menuId);
     handleCloseMenu();
+    onMenuClick();
   };
 
   const handleCloseMenu = () => {
