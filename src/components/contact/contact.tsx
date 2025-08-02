@@ -193,7 +193,7 @@ export default function Contact(): JSX.Element {
             <div
               className={styles.item}
               onClick={() =>
-                copyToClipboard({ text: "madgekr@gmail.com", type: "이메일" })
+                copyToClipboard({ text: "kyle07@naver.com", type: "이메일" })
               }
             >
               <div
@@ -203,7 +203,7 @@ export default function Contact(): JSX.Element {
               ></div>
               <div className={styles.detail}>
                 <div className={styles.label}>이메일</div>
-                <div className={styles.value}>madgekr@gmail.com</div>
+                <div className={styles.value}>kyle07@naver.com</div>
               </div>
             </div>
           </div>
