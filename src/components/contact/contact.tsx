@@ -48,11 +48,13 @@ export default function Contact(): JSX.Element {
     };
   }, [isLoading]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -73,7 +75,12 @@ export default function Contact(): JSX.Element {
         throw new Error("폼 요소를 찾을 수 없습니다.");
       }
 
-      const result = await emailjs.sendForm(serviceId, templateId, form.current, publicKey);
+      const result = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        form.current,
+        publicKey
+      );
 
       if (result.status === 200) {
         alert("메시지가 성공적으로 전송되었습니다!");
@@ -85,12 +92,6 @@ export default function Contact(): JSX.Element {
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const copyToClipboard = ({ text, type }: Copy) => {
-    navigator.clipboard.writeText(text).then(() => {
-      alert(`${type}이(가) 클립보드에 복사되었습니다.`);
-    });
   };
 
   return (
@@ -174,12 +175,7 @@ export default function Contact(): JSX.Element {
             편하신 방법으로 연락주세요!
           </p>
           <div className={styles.info}>
-            <div
-              className={styles.item}
-              onClick={() =>
-                copyToClipboard({ text: "010-8947-2680", type: "전화번호" })
-              }
-            >
+            <div className={styles.item}>
               <div
                 className={`${styles.icon} ${styles.call} ${
                   isDarkMode ? styles.on : ""
@@ -190,12 +186,7 @@ export default function Contact(): JSX.Element {
                 <div className={styles.value}>010-8947-2680</div>
               </div>
             </div>
-            <div
-              className={styles.item}
-              onClick={() =>
-                copyToClipboard({ text: "kyle07@naver.com", type: "이메일" })
-              }
-            >
+            <div className={styles.item}>
               <div
                 className={`${styles.icon} ${styles.email} ${
                   isDarkMode ? styles.on : ""
@@ -219,10 +210,10 @@ export default function Contact(): JSX.Element {
               title="새 창으로 열림"
               rel="noopener noreferrer"
             >
-              <Image 
-                src="/icon/icon-git.png" 
-                alt="GitHub" 
-                width={48} 
+              <Image
+                src="/icon/icon-git.png"
+                alt="GitHub"
+                width={48}
                 height={48}
                 priority
               />

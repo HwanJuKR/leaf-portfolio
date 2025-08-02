@@ -26,7 +26,8 @@ export default function Portfolio(): JSX.Element {
       stack: ["Next.js", "TypeScript", "Tailwind", "React Query", "NestJS"],
       summary: {
         primary: "글로벌 숙소 검색 결과 페이지의 지도 UI 및 사용자 동선 개선",
-        secondary: "검색 키워드에 따른 위치 기반 숙소 렌더링 및 지도 인터랙션 대응 구현",
+        secondary:
+          "검색 키워드에 따른 위치 기반 숙소 렌더링 및 지도 인터랙션 대응 구현",
       },
     },
     {
