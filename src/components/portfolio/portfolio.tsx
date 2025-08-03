@@ -19,7 +19,7 @@ export default function Portfolio(): JSX.Element {
   const FE: PortfolioItem[] = [
     {
       category: "frontend",
-      src: "/portfolio/img-map.png",
+      src: "/img/img-map.png",
       title: "NOL - 해외지도 개편",
       period: "2025/05 ~ 2025/06",
       link: "https://nol.yanolja.com/results?keyword=%EC%98%A4%EC%82%AC%EC%B9%B4&category=global&pageKey=1753250282069",
@@ -32,7 +32,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "frontend",
-      src: "/portfolio/img-rebranding.png",
+      src: "/img/img-rebranding.png",
       title: "NOL - 리브랜딩",
       period: "2025/03 ~ 2025/04",
       link: "https://nol.yanolja.com/",
@@ -44,7 +44,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "frontend",
-      src: "/portfolio/img-mypage.png",
+      src: "/img/img-mypage.png",
       title: "인터파크 티켓 - 모바일 마이페이지 홈 개편",
       period: "2024/12 ~ 2025/01",
       link: "https://tickets.interpark.com/contents/myPage",
@@ -67,7 +67,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "frontend",
-      src: "/portfolio/img-bridge.png",
+      src: "/img/img-bridge.png",
       title: "인터파크 티켓 - 브릿지 페이지 개편",
       period: "2024/03 ~ 2024/04",
       link: "https://tickets.interpark.com/contents/bridge/25003151",
@@ -79,7 +79,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "frontend",
-      src: "/portfolio/img-genre.png",
+      src: "/img/img-genre.png",
       title: "인터파크 티켓 - 대장르 개편",
       period: "2023/12 ~ 2024/02",
       link: "https://tickets.interpark.com/contents/genre/musical",
@@ -104,7 +104,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "publishing",
-      src: "/portfolio/img-mdshop.png",
+      src: "/img/img-mdshop.png",
       title: "MDShop 개편",
       period: "2024/07 ~ 2024/08",
       link: "https://nolmdshop.com/",
@@ -115,7 +115,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "publishing",
-      src: "/portfolio/img-air.png",
+      src: "/img/img-air.png",
       title: "인터파크 투어 - 항공 모바일 개편",
       period: "2023/06 ~ 2023/07",
       link: "https://travel.interpark.com/air",
@@ -126,7 +126,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "publishing",
-      src: "/portfolio/img-domestic.png",
+      src: "/img/img-domestic.png",
       title: "인터파크 투어 - 국내숙소 메인 개편",
       period: "2023/04 ~ 2023/05",
       link: "https://travel.interpark.com/checkinnow",
@@ -137,7 +137,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "publishing",
-      src: "/portfolio/img-package.png",
+      src: "/img/img-package.png",
       title: "인터파크 투어 - 패키지 메인 개편",
       period: "2022/10 ~ 2023/01",
       link: "https://travel.interpark.com/tour/main/domestic",
@@ -148,7 +148,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "publishing",
-      src: "/portfolio/img-coexartium.png",
+      src: "/img/img-coexartium.png",
       title: "코엑스 아티움",
       period: "2021.01 ~ 2021.10",
       link: "https://www.coexartium.co.kr/",
@@ -159,7 +159,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "publishing",
-      src: "/portfolio/img-music.png",
+      src: "/img/img-music.png",
       title: "KBS 뮤직관",
       period: "2021.01 ~ 2021.03",
       link: "https://music.kbs.co.kr/",
@@ -170,7 +170,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "publishing",
-      src: "/portfolio/img-kbs.png",
+      src: "/img/img-kbs.png",
       title: "KBS 메인",
       period: "2020.10 ~ 2021.01",
       link: "https://www.kbs.co.kr/",
@@ -182,7 +182,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "publishing",
-      src: "/portfolio/img-star.png",
+      src: "/img/img-star.png",
       title: "KBS 스타연예",
       period: "2020.09 ~ 2020.10",
       link: "https://kstar.kbs.co.kr/",
@@ -193,7 +193,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "publishing",
-      src: "/portfolio/img-about.png",
+      src: "/img/img-about.png",
       title: "KBS 웹 접근성 프로젝트",
       period: "2019.09 ~ 2020.01",
       link: "https://about.kbs.co.kr/",
