@@ -23,7 +23,7 @@ export default function Portfolio(): JSX.Element {
       title: "NOL - 해외지도 개편",
       period: "2025/05 ~ 2025/06",
       link: "https://nol.yanolja.com/results?keyword=%EC%98%A4%EC%82%AC%EC%B9%B4&category=global&pageKey=1753250282069",
-      stack: ["Next.js", "TypeScript", "Tailwind", "React Query", "NestJS"],
+      stack: ["Next.js", "TypeScript", "Tailwind", "React Query", "Jotai", "NestJS"],
       summary: {
         primary: "글로벌 숙소 검색 결과 페이지의 지도 UI 및 사용자 동선 개선",
         secondary:
@@ -87,6 +87,15 @@ export default function Portfolio(): JSX.Element {
       summary: {
         primary: "장르별 공연 리스트 등 UI 전면 개편",
         secondary: "캐러셀, 탭 기능 등 UX 개선 작업 수행",
+      },
+    },
+    {
+      category: "frontend",
+      title: "Good Fran",
+      period: "2018/01 ~ 2018/12",
+      stack: ["Vue.js", "PWA", "HTML", "CSS", "JavaScript"],
+      summary: {
+        primary: "PWA 기반 웹뷰 앱 개발",
       },
     },
   ];
