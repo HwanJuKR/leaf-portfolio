@@ -93,7 +93,7 @@ export default function Portfolio(): JSX.Element {
       category: "frontend",
       title: "Good Fran",
       period: "2018/01 ~ 2018/12",
-      stack: ["Vue.js", "PWA", "JavaScript"],
+      stack: ["Vue.js", "PWA", "HTML", "CSS", "JavaScript"],
       summary: {
         primary: "PWA 기반 웹뷰 앱 개발",
       },
