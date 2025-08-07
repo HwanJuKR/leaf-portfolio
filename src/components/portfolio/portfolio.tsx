@@ -56,7 +56,7 @@ export default function Portfolio(): JSX.Element {
     },
     {
       category: "frontend",
-      title: "인터파크 티켓 - 예매 위버스 인증 연동",
+      title: "인터파크 티켓 - 위버스 팬 인증 연동 예매 시스템 구축",
       period: "2024/05 ~ 2024/06",
       link: "",
       stack: ["Next.js", "TypeScript", "Spring"],
