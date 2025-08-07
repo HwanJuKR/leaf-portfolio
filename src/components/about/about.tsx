@@ -21,13 +21,23 @@ export default function About(): JSX.Element {
     { src: "/icon/icon-jquery.png", alt: "jQuery", label: "jQuery" },
     { src: "/icon/icon-ejs.png", alt: "EJS", label: "EJS" },
     { src: "/icon/icon-sass.png", alt: "Sass", label: "Sass" },
+    { src: "/icon/icon-tailwind.png", alt: "Tailwind CSS", label: "Tailwind CSS" },
     { src: "/icon/icon-a11y.png", alt: "웹접근성", label: "웹접근성" },
     { src: "/icon/icon-vue.png", alt: "Vue.js", label: "Vue.js" },
     { src: "/icon/icon-react.png", alt: "React", label: "React" },
     { src: "/icon/icon-next.png", alt: "Next.js", label: "Next.js" },
+    { src: "/icon/icon-typescript.png", alt: "TypeScript", label: "TypeScript" },
+    { src: "/icon/icon-zod.png", alt: "Zod", label: "Zod" },
+    { src: "/icon/icon-tanstackquery.png", alt: "TanStack Query", label: "TanStack Query" },
+    { src: "/icon/icon-swr.png", alt: "SWR", label: "SWR" },
+    { src: "/icon/icon-jotai.png", alt: "Jotai", label: "Jotai" },
     { src: "/icon/icon-git.png", alt: "Git", label: "Git" },
     { src: "/icon/icon-aws.png", alt: "AWS", label: "AWS" },
+    { src: "/icon/icon-cypress.png", alt: "Cypress", label: "Cypress" },
     { src: "/icon/icon-ps.png", alt: "Photoshop", label: "Photoshop" },
+    { src: "/icon/icon-storybook.png", alt: "Storybook", label: "Storybook" },
+    { src: "/icon/icon-figma.png", alt: "Figma", label: "Figma" },
+    { src: "/icon/icon-zeplin.png", alt: "Zeplin", label: "Zeplin" },
   ];
 
   const experiences: Experience[] = [
