@@ -23,7 +23,7 @@ export default function Portfolio(): JSX.Element {
       title: "NOL - 해외지도 개편",
       period: "2025/05 ~ 2025/06",
       link: "https://nol.yanolja.com/results?keyword=%EC%98%A4%EC%82%AC%EC%B9%B4&category=global&pageKey=1753250282069",
-      stack: ["Next.js", "TypeScript", "Tailwind", "React Query", "Jotai", "NestJS"],
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "TanStack Query", "Jotai", "NestJS"],
       summary: {
         primary: "글로벌 숙소 검색 결과 페이지의 지도 UI 및 사용자 동선 개선",
         secondary:
@@ -36,7 +36,7 @@ export default function Portfolio(): JSX.Element {
       title: "NOL - 리브랜딩",
       period: "2025/03 ~ 2025/04",
       link: "https://nol.yanolja.com/",
-      stack: ["Next.js", "TypeScript", "Tailwind"],
+      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       summary: {
         primary: "야놀자 플랫폼 'NOL' 리브랜딩 작업 전반 참여",
         secondary: "전반적인 디자인 시스템 개편",
@@ -45,7 +45,7 @@ export default function Portfolio(): JSX.Element {
     {
       category: "frontend",
       src: "/img/img-mypage.png",
-      title: "인터파크 티켓 - 모바일 마이페이지 홈 개편",
+      title: "인터파크 티켓 - 마이페이지 모바일 홈 개편",
       period: "2024/12 ~ 2025/01",
       link: "https://tickets.interpark.com/contents/myPage",
       stack: ["Next.js", "TypeScript", "SCSS", "SWR", "Spring"],
@@ -59,7 +59,7 @@ export default function Portfolio(): JSX.Element {
       title: "인터파크 티켓 - 위버스 팬 인증 연동 예매 시스템 구축",
       period: "2024/05 ~ 2024/06",
       link: "",
-      stack: ["Next.js", "TypeScript", "Spring"],
+      stack: ["Next.js", "TypeScript", "JavaScript", "Spring"],
       summary: {
         primary: "Weverse 연동을 통해 팬 인증 기반 티켓 예매 기능 구축",
         secondary: "인증 토큰 처리 및 예매 조건 분기처리 로직 구현",
