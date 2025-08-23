@@ -163,7 +163,7 @@
     .info {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
 
       .period {
         display: flex;
@@ -198,10 +198,25 @@
       flex: 1;
 
       p {
+        position: relative;
+        padding-left: 10px;
         color: var(--color-text);
 
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 4px;
+          height: 4px;
+          top: 8px;
+          left: 0;
+          transform: translateY(-50%);
+          background-color: var(--color-accent);
+          border-radius: 100%;
+        }
+
         + p {
-          margin-top: 8px;
+          margin-top: 4px;
         }
       }
     }
