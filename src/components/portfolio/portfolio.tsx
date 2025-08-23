@@ -9,10 +9,7 @@ interface PortfolioItem {
   period: string;
   link?: string;
   stack: string[];
-  summary: {
-    primary: string;
-    secondary?: string;
-  };
+  summary: string[];
 }
 
 export default function Portfolio(): JSX.Element {
@@ -23,12 +20,19 @@ export default function Portfolio(): JSX.Element {
       title: "NOL - 해외지도 개편",
       period: "2025/05 ~ 2025/06",
       link: "https://nol.yanolja.com/results?keyword=%EC%98%A4%EC%82%AC%EC%B9%B4&category=global&pageKey=1753250282069",
-      stack: ["Next.js", "TypeScript", "Tailwind CSS", "TanStack Query", "Jotai", "NestJS"],
-      summary: {
-        primary: "글로벌 숙소 검색 결과 페이지의 지도 UI 및 사용자 동선 개선",
-        secondary:
-          "검색 키워드에 따른 위치 기반 숙소 렌더링 및 지도 인터랙션 대응 구현",
-      },
+      stack: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "TanStack Query",
+        "Jotai",
+        "NestJS",
+      ],
+      summary: [
+        "검색 결과 페이지 내 지도 UI를 개편하여 글로벌 숙소 탐색 동선을 최적화",
+        "TanStack Query + Jotai로 지도 상태와 숙소 데이터 동기화 로직 구현",
+        "렌더링 지연을 해소하고 로딩 속도를 단축하여 UX 향상",
+      ],
     },
     {
       category: "frontend",
@@ -37,10 +41,11 @@ export default function Portfolio(): JSX.Element {
       period: "2025/03 ~ 2025/04",
       link: "https://nol.yanolja.com/",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-      summary: {
-        primary: "야놀자 플랫폼 'NOL' 리브랜딩 작업 전반 참여",
-        secondary: "전반적인 디자인 시스템 개편",
-      },
+      summary: [
+        "NOL 서비스 리브랜딩 프로젝트에서 프론트엔드 개발 전반에 참여",
+        "Tailwind CSS 활용해 디자인 시스템을 컴포넌트화하고 일관성 확보",
+        "컴포넌트 재사용률 향상으로 개발 생산성 증가 기여",
+      ],
     },
     {
       category: "frontend",
@@ -49,10 +54,22 @@ export default function Portfolio(): JSX.Element {
       period: "2024/12 ~ 2025/01",
       link: "https://tickets.interpark.com/contents/myPage",
       stack: ["Next.js", "TypeScript", "SCSS", "SWR", "Spring"],
-      summary: {
-        primary: "NOL포인트, 내 활동, 예매내역 등을 직관적으로 개선",
-        secondary: "컴포넌트 구조 분리 및 상태 관리 방식을 고도화",
-      },
+      summary: [
+        "마이페이지 핵심 기능(NOL포인트, 예매내역, 활동내역)을 컴포넌트화하여 재사용성과 UI 일관성을 확보",
+        "상태 관리 최적화 및 컴포넌트 구조 개선을 통해 유지보수 효율과 기능 확장성 향상",
+      ],
+    },
+    {
+      category: "frontend",
+      title: "인터파크 티켓 - 키오스크 개편",
+      period: "2024/10 ~ 2024/11",
+      link: "",
+      stack: ["EJS", "SCSS", "JavaScript"],
+      summary: [
+        "현장 키오스크 환경에 맞게 터치 기반 UI를 최적화",
+        "다양한 해상도에 대응하는 반응형 구조 적용",
+        "터치 인터랙션에 최적화된 이벤트 처리 및 애니메이션 구현",
+      ],
     },
     {
       category: "frontend",
@@ -60,10 +77,11 @@ export default function Portfolio(): JSX.Element {
       period: "2024/05 ~ 2024/06",
       link: "",
       stack: ["Next.js", "TypeScript", "JavaScript", "Spring"],
-      summary: {
-        primary: "Weverse 연동을 통해 팬 인증 기반 티켓 예매 기능 구축",
-        secondary: "인증 토큰 처리 및 예매 조건 분기처리 로직 구현",
-      },
+      summary: [
+        "Weverse 연동을 통한 팬 인증 기반 티켓 예매 기능 신규 구축",
+        "인증 토큰 처리 및 조건 분기 로직 구현",
+        "예매 과정의 안정성을 확보하고 불법 예매를 차단하여 팬 경험 강화",
+      ],
     },
     {
       category: "frontend",
@@ -72,10 +90,10 @@ export default function Portfolio(): JSX.Element {
       period: "2024/03 ~ 2024/04",
       link: "https://tickets.interpark.com/contents/bridge/25003151",
       stack: ["Next.js", "TypeScript", "SCSS", "SWR", "Spring"],
-      summary: {
-        primary: "공연 상세페이지 이동 전 중간 브릿지 페이지 UI 개선",
-        secondary: "UX 향상을 위해 로딩 속도 최적화 및 반응형 디자인 적용",
-      },
+      summary: [
+        "공연 상세 진입 전 브릿지 페이지 UI/UX 개선을 주도",
+        "반응형 레이아웃과 로딩 속도 최적화 작업 수행",
+      ],
     },
     {
       category: "frontend",
@@ -84,33 +102,21 @@ export default function Portfolio(): JSX.Element {
       period: "2023/12 ~ 2024/02",
       link: "https://tickets.interpark.com/contents/genre/musical",
       stack: ["Next.js", "TypeScript", "SCSS", "SWR", "Spring", "Cypress"],
-      summary: {
-        primary: "장르별 공연 리스트 등 UI 전면 개편",
-        secondary: "캐러셀, 탭 기능 등 UX 개선 작업 수행",
-      },
+      summary: [
+        "뮤지컬, 콘서트 등 장르별 공연 리스트 UI를 컴포넌트 구조로 재설계",
+        "캐러셀, 탭 등 주요 인터랙션을 모듈화하고 성능을 최적화",
+        "Cypress E2E 테스트를 도입해 주요 기능 안정성을 확보",
+      ],
     },
     {
       category: "frontend",
       title: "Good Fran",
       period: "2018/01 ~ 2018/12",
       stack: ["Vue.js", "PWA", "HTML", "CSS", "JavaScript"],
-      summary: {
-        primary: "PWA 기반 웹뷰 앱 개발",
-      },
+      summary: ["PWA 기반 웹뷰 앱 개발"],
     },
   ];
   const UI: PortfolioItem[] = [
-    {
-      category: "publishing",
-      title: "인터파크 티켓 - 키오스크 UI 개편",
-      period: "2024/10 ~ 2024/11",
-      link: "",
-      stack: ["EJS", "SCSS", "JavaScript"],
-      summary: {
-        primary: "현장 키오스크 환경에 맞는 터치 UI 개편 및 시인성 향상 작업",
-        secondary: "퍼포먼스를 고려한 모듈화 및 디바이스 대응 UI 개선",
-      },
-    },
     {
       category: "publishing",
       src: "/img/img-mdshop.png",
@@ -118,9 +124,7 @@ export default function Portfolio(): JSX.Element {
       period: "2024/07 ~ 2024/08",
       link: "https://nolmdshop.com/",
       stack: ["Cafe24", "CSS", "JavaScript"],
-      summary: {
-        primary: "카페24 기본 템플릿을 커스터마이징하여 UI 개선",
-      },
+      summary: ["카페24 기본 템플릿을 커스터마이징하여 UI 개선"],
     },
     {
       category: "publishing",
@@ -129,9 +133,7 @@ export default function Portfolio(): JSX.Element {
       period: "2023/06 ~ 2023/07",
       link: "https://travel.interpark.com/air",
       stack: ["EJS", "SCSS", "JavaScript"],
-      summary: {
-        primary: "모바일 환경에 최적화된 항공권 검색 및 스케쥴 UI 개선",
-      },
+      summary: ["모바일 환경에 최적화된 항공권 검색 및 스케쥴 UI 개선"],
     },
     {
       category: "publishing",
@@ -140,9 +142,7 @@ export default function Portfolio(): JSX.Element {
       period: "2023/04 ~ 2023/05",
       link: "https://travel.interpark.com/checkinnow",
       stack: ["EJS", "SCSS", "JavaScript"],
-      summary: {
-        primary: "메인 비주얼 개편 및 컨텐츠 구조 개선",
-      },
+      summary: ["메인 비주얼 개편 및 컨텐츠 구조 개선"],
     },
     {
       category: "publishing",
@@ -151,9 +151,7 @@ export default function Portfolio(): JSX.Element {
       period: "2022/10 ~ 2023/01",
       link: "https://travel.interpark.com/tour/main/domestic",
       stack: ["EJS", "SCSS", "JavaScript"],
-      summary: {
-        primary: "레거시 서비스 개편 및 UI/UX 현대화",
-      },
+      summary: ["레거시 서비스 개편 및 UI/UX 개선"],
     },
     {
       category: "publishing",
@@ -162,9 +160,11 @@ export default function Portfolio(): JSX.Element {
       period: "2021.01 ~ 2021.10",
       link: "https://www.coexartium.co.kr/",
       stack: ["EJS", "SCSS", "JavaScript"],
-      summary: {
-        primary: "신규 웹서비스 구축",
-      },
+      summary: [
+        "코엑스 아티움 신규 웹서비스 구축 퍼블리싱 담당",
+        "EJS 템플릿 기반 구조 설계 및 모듈화 진행",
+        "다양한 브라우저 환경에서 크로스브라우징 최적화",
+      ],
     },
     {
       category: "publishing",
@@ -173,9 +173,7 @@ export default function Portfolio(): JSX.Element {
       period: "2021.01 ~ 2021.03",
       link: "https://music.kbs.co.kr/",
       stack: ["HTML", "CSS", "JavaScript", "jQuery"],
-      summary: {
-        primary: "KBS 신규 웹서비스 구축",
-      },
+      summary: ["KBS 신규 서비스 뮤직관 웹사이트 퍼블리싱 담당"],
     },
     {
       category: "publishing",
@@ -184,10 +182,10 @@ export default function Portfolio(): JSX.Element {
       period: "2020.10 ~ 2021.01",
       link: "https://www.kbs.co.kr/",
       stack: ["HTML", "SCSS", "JavaScript", "jQuery"],
-      summary: {
-        primary: "KBS 메인페이지 개편 웹 퍼블리싱 진행",
-        secondary: "다크모드 기능 추가 및 접근성 향상 등 UI 개선 작업 수행",
-      },
+      summary: [
+        "KBS 메인페이지 개편 퍼블리싱 담당",
+        "다크모드 기능 추가 및 접근성 개선 반영",
+      ],
     },
     {
       category: "publishing",
@@ -196,9 +194,7 @@ export default function Portfolio(): JSX.Element {
       period: "2020.09 ~ 2020.10",
       link: "https://kstar.kbs.co.kr/",
       stack: ["HTML", "CSS", "JavaScript", "jQuery"],
-      summary: {
-        primary: "KBS 신규 웹서비스 구축",
-      },
+      summary: ["KBS 신규 서비스 스타연예 웹사이트 퍼블리싱 담당"],
     },
     {
       category: "publishing",
@@ -207,10 +203,10 @@ export default function Portfolio(): JSX.Element {
       period: "2019.09 ~ 2020.01",
       link: "https://about.kbs.co.kr/",
       stack: ["HTML", "CSS", "JavaScript", "jQuery"],
-      summary: {
-        primary: "KBS 소개 페이지의 웹접근성 인증마크 획득",
-        secondary: "2020년 KBS 전체 웹 서비스 웹 접근성 준수율 98.6% 달성",
-      },
+      summary: [
+        "KBS 소개 페이지의 웹접근성 인증마크 획득",
+        "2020년 KBS 전체 웹 서비스 웹 접근성 준수율 98.6% 달성",
+      ],
     },
   ];
 
@@ -271,8 +267,9 @@ export default function Portfolio(): JSX.Element {
                   <div className={styles.stack}>{item.stack.join(" / ")}</div>
                 </div>
                 <div className={styles.summary}>
-                  <p>{item.summary.primary}</p>
-                  {item.summary.secondary && <p>{item.summary.secondary}</p>}
+                  {item.summary.map((summary, index) => (
+                    <p key={index}>{summary}</p>
+                  ))}
                 </div>
               </div>
             </Link>
@@ -334,8 +331,9 @@ export default function Portfolio(): JSX.Element {
                   <div className={styles.stack}>{item.stack.join(" / ")}</div>
                 </div>
                 <div className={styles.summary}>
-                  <p>{item.summary.primary}</p>
-                  {item.summary.secondary && <p>{item.summary.secondary}</p>}
+                  {item.summary.map((summary, index) => (
+                    <p key={index}>{summary}</p>
+                  ))}
                 </div>
               </div>
             </Link>

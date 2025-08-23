@@ -57,7 +57,7 @@ export default function Main(): JSX.Element {
         <div className={styles.element}></div>
       </div>
       <footer className={styles.footer}>
-        <p>© 2025 Leaf v.3.0.6</p>
+        <p>© 2025 Leaf v.3.0.7</p>
       </footer>
     </>
   );
