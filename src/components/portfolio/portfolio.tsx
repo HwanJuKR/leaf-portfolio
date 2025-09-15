@@ -31,7 +31,7 @@ export default function Portfolio(): JSX.Element {
       summary: [
         "검색 결과 페이지 내 지도 UI를 개편하여 글로벌 숙소 탐색 동선을 최적화",
         "TanStack Query + Jotai로 지도 상태와 숙소 데이터 동기화 로직 구현",
-        "렌더링 지연을 해소하고 로딩 속도를 단축하여 UX 향상",
+        "데이터 프리패치를 통한 초기 로딩 시간 개선으로 사용자 경험 향상",
       ],
     },
     {
@@ -91,8 +91,8 @@ export default function Portfolio(): JSX.Element {
       link: "https://tickets.interpark.com/contents/bridge/25003151",
       stack: ["Next.js", "TypeScript", "SCSS", "SWR", "Spring"],
       summary: [
-        "공연 상세 진입 전 브릿지 페이지 UI/UX 개선을 주도",
-        "반응형 레이아웃과 로딩 속도 최적화 작업 수행",
+        "공연 상세 진입 전 브릿지 페이지 UI/UX 개선",
+        "SWR 기반 데이터 캐싱과 재검증 로직 개선을 통해 API 호출 횟수를 줄이고 사용자 응답 속도를 향상",
       ],
     },
     {
