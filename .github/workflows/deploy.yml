@@ -32,17 +32,18 @@ jobs:
           chmod 600 ~/.ssh/cafe24_key
           ssh-keyscan -H ${{ secrets.FTP_HOST }} >> ~/.ssh/known_hosts
           
-          echo "=== Testing SSH connection ==="
-          ssh -i ~/.ssh/cafe24_key -p 22 -o StrictHostKeyChecking=no \
-            ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }} "pwd; ls -la ${{ secrets.FTP_PATH }}" || echo "SSH test failed"
-          
-          echo "=== Starting file upload ==="
+          echo "=== Starting SFTP upload ==="
           cd out
+          
           find . -type f | while read file; do
             clean_file="${file#./}"
-            echo "Uploading: $clean_file"
-            scp -v -i ~/.ssh/cafe24_key -P 22 -o StrictHostKeyChecking=no \
-              "$file" \
-              "${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }}:${{ secrets.FTP_PATH }}/$clean_file" || echo "Failed: $clean_file"
-          done
+            echo "put \"$file\" \"${{ secrets.FTP_PATH }}/$clean_file\""
+          done > /tmp/sftp_batch.txt
+          
+          sftp -b /tmp/sftp_batch.txt \
+            -i ~/.ssh/cafe24_key \
+            -P 22 \
+            -o StrictHostKeyChecking=no \
+            ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }}
+          
           echo "=== Upload completed ==="
