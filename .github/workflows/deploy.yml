@@ -34,11 +34,14 @@ jobs:
           set ftp:ssl-allow no
           set ftp:passive-mode on
           open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOST }}
-          echo '=== Current directory ==='
+          echo '=== Initial directory ==='
           pwd
-          echo '=== List files ==='
           ls -la
-          echo '=== Test mkdir ==='
+          echo '=== Moving to /www/ ==='
+          cd /www/ || echo 'cd /www/ failed'
+          pwd
+          ls -la
+          echo '=== Test mkdir in /www/ ==='
           mkdir test_dir_github || echo 'mkdir failed'
           echo '=== Test rmdir ==='
           rmdir test_dir_github || echo 'rmdir failed'
