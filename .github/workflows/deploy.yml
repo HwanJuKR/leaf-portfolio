@@ -25,15 +25,26 @@ jobs:
       - name: Build Next.js project
         run: npm run build
 
-      - name: Deploy to Cafe24 via SFTP
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          target: "${{ secrets.FTP_PATH }}"
-          port: 22
-          source: "out/*"
-          strip_components: 1
-          overwrite: true
-          rm: true
+      - name: Test FTP Connection and Permissions
+        run: |
+          sudo apt-get update && sudo apt-get install -y lftp
+
+          echo "=== Testing FTP connection ==="
+          lftp -c "
+          set ftp:ssl-allow no
+          set ftp:passive-mode on
+          open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOST }}
+          echo '=== Current directory ==='
+          pwd
+          echo '=== List files ==='
+          ls -la
+          echo '=== Test mkdir ==='
+          mkdir test_dir_github || echo 'mkdir failed'
+          echo '=== Test rmdir ==='
+          rmdir test_dir_github || echo 'rmdir failed'
+          echo '=== Test file upload ==='
+          put README.md -o test_upload.txt || echo 'upload failed'
+          echo '=== Test file delete ==='
+          rm test_upload.txt || echo 'delete failed'
+          echo '=== FTP test completed ==='
+          "
