@@ -25,11 +25,13 @@ jobs:
       - name: Build Next.js project
         run: npm run build
 
-      - name: Deploy to Cafe24 via FTP
-        uses: sebastianpopp/ftp-action@releases/v2
+      - name: Deploy to Cafe24 via SFTP
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.FTP_HOST }}
-          user: ${{ secrets.FTP_USERNAME }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: out
-          remoteDir: .
+          target: "${{ secrets.FTP_PATH }}"
+          port: 22
+          source: "out/*"
+          strip_components: 1
