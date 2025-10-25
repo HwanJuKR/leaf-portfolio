@@ -25,14 +25,11 @@ jobs:
       - name: Build Next.js project
         run: npm run build
 
-      - name: Install lftp
-        run: sudo apt-get update && sudo apt-get install -y lftp
-
-      - name: Upload to Cafe24 via FTP
-        run: |
-          lftp -c "
-          open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOST }}
-          set ftp:ssl-allow no
-          set ftp:passive-mode on
-          mirror -R --delete-first --verbose ./out/ /www/
-          "
+      - name: Deploy to Cafe24 via FTP
+        uses: sebastianpopp/ftp-action@releases/v2
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: out
+          remoteDir: .
