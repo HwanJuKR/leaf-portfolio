@@ -30,4 +30,5 @@ jobs:
 
       - name: Upload to Cafe24 via FTP
         run: |
-          wput -u -R ./out/* ftp://${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}@${{ secrets.FTP_HOST }}/
+          cd out
+          wput -u -R * ftp://${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}@${{ secrets.FTP_HOST }}/
