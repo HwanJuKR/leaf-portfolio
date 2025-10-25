@@ -35,3 +35,5 @@ jobs:
           port: 22
           source: "out/*"
           strip_components: 1
+          overwrite: true
+          rm: true
