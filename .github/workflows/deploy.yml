@@ -25,12 +25,9 @@ jobs:
       - name: Build Next.js project
         run: npm run build
 
+      - name: Install wput
+        run: sudo apt-get update && sudo apt-get install -y wput
+
       - name: Upload to Cafe24 via FTP
         run: |
-          cd out
-          find . -type f | while read file; do
-            echo "Uploading $file"
-            curl -T "$file" --ftp-pasv --silent --show-error \
-              ftp://${{ secrets.FTP_HOST }}/$file \
-              --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }} || echo "Failed: $file"
-          done
+          wput -u -R ./out/* ftp://${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}@${{ secrets.FTP_HOST }}/
