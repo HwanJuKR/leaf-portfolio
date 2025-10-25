@@ -25,29 +25,15 @@ jobs:
       - name: Build Next.js project
         run: npm run build
 
-      - name: Test FTP Connection and Permissions
+      - name: Deploy to Cafe24 via SFTP
         run: |
-          sudo apt-get update && sudo apt-get install -y lftp
-
-          echo "=== Testing FTP connection ==="
-          lftp -c "
-          set ftp:ssl-allow no
-          set ftp:passive-mode on
-          open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOST }}
-          echo '=== Initial directory ==='
-          pwd
-          ls -la
-          echo '=== Moving to /www/ ==='
-          cd /www/ || echo 'cd /www/ failed'
-          pwd
-          ls -la
-          echo '=== Test mkdir in /www/ ==='
-          mkdir test_dir_github || echo 'mkdir failed'
-          echo '=== Test rmdir ==='
-          rmdir test_dir_github || echo 'rmdir failed'
-          echo '=== Test file upload ==='
-          put README.md -o test_upload.txt || echo 'upload failed'
-          echo '=== Test file delete ==='
-          rm test_upload.txt || echo 'delete failed'
-          echo '=== FTP test completed ==='
-          "
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/cafe24_key
+          chmod 600 ~/.ssh/cafe24_key
+          
+          ssh-keyscan -H ${{ secrets.FTP_HOST }} >> ~/.ssh/known_hosts
+          
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/cafe24_key -p 22 -o StrictHostKeyChecking=no" \
+            ./out/ \
+            ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }}:${{ secrets.FTP_PATH }}
