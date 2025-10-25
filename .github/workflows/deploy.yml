@@ -35,12 +35,12 @@ jobs:
           protocol: ftp
           server-dir: ${{ secrets.FTP_PATH }}
           local-dir: ./out/
+          log-level: verbose
+          state-name: .ftp-deploy-sync-state.json
+          dangerous-clean-slate: false
           exclude: |
             **/.git*
             **/.github*
             **/node_modules/**
             **/.DS_Store
-          state-name: .ftp-deploy-sync-state.json
-          dangerous-clean-slate: false
-          delete: true
 
