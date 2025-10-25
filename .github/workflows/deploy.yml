@@ -30,10 +30,12 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/cafe24_key
           chmod 600 ~/.ssh/cafe24_key
-          
           ssh-keyscan -H ${{ secrets.FTP_HOST }} >> ~/.ssh/known_hosts
           
-          rsync -avz --delete \
-            -e "ssh -i ~/.ssh/cafe24_key -p 22 -o StrictHostKeyChecking=no" \
-            ./out/ \
-            ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }}:${{ secrets.FTP_PATH }}
+          cd out
+          find . -type f | while read file; do
+            echo "Uploading: $file"
+            scp -i ~/.ssh/cafe24_key -P 22 -o StrictHostKeyChecking=no \
+              "$file" \
+              "${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }}:${{ secrets.FTP_PATH }}/${file#./}"
+          done
