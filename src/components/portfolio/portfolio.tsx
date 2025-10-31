@@ -16,6 +16,18 @@ export default function Portfolio(): JSX.Element {
   const FE: PortfolioItem[] = [
     {
       category: "frontend",
+      title: "어드민 저장소 이관 및 기능 추가",
+      period: "2025/08 ~ 2025/10",
+      link: "",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Redux", "Jenkins"],
+      summary: [
+        "기존 어드민 저장소를 모노레포 구조로 이관",
+        "Jenkins 파이프라인 수정으로 배포 안정화",
+        "신규 기능 추가 및 일부 동작 개선 수행",
+      ],
+    },
+    {
+      category: "frontend",
       src: "/img/img-map.png",
       title: "NOL - 해외지도 개편",
       period: "2025/05 ~ 2025/06",
