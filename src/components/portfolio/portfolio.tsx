@@ -41,7 +41,7 @@ export default function Portfolio(): JSX.Element {
         "NestJS",
       ],
       summary: [
-        "검색 결과 페이지 내 지도 UI를 개편하여 글로벌 숙소 탐색 동선을 최적화",
+        "검색 결과 페이지 내 지도 UI를 개편하여 숙소 탐색 경험을 개선",
         "TanStack Query + Jotai로 지도 상태와 숙소 데이터 동기화 로직 구현",
         "데이터 프리패치를 통한 초기 로딩 시간 개선으로 사용자 경험 향상",
       ],
@@ -67,8 +67,8 @@ export default function Portfolio(): JSX.Element {
       link: "https://tickets.interpark.com/contents/myPage",
       stack: ["Next.js", "TypeScript", "SCSS", "SWR", "Spring"],
       summary: [
-        "마이페이지 핵심 기능(NOL포인트, 예매내역, 활동내역)을 컴포넌트화하여 재사용성과 UI 일관성을 확보",
-        "상태 관리 최적화 및 컴포넌트 구조 개선을 통해 유지보수 효율과 기능 확장성 향상",
+        "기존 레거시 기반으로 제공되던 마이페이지 모바일 홈을 현대적인 UI 구조로 재설계",
+        "NOL포인트·예매내역·활동내역 등 컴포넌트로 분리해 유지보수성과 확장성 개선",
       ],
     },
     {
